@@ -1,0 +1,147 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(135deg,#153677,#4e085f);
+}
+.app{
+    background-color: #fff;
+    width: 60%;
+    border-radius:10px ;
+    padding: 40px 30px 70px;
+    margin: 100px auto 20px;
+    display: flex;
+    flex-direction: column;    
+}
+@media screen and (max-width:750px) {
+    .app{
+        width: 90%;
+    }
+}
+.app h2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #002765;
+    margin-bottom: 20px;
+}
+.app h2 img{
+    margin-left: 10px;
+    width: 30px;
+}
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #edeef0;
+    border-radius: 30px;
+    margin-bottom: 25px;
+    padding-left: 20px;
+}
+.line input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    flex: 1;
+    padding: 10px;
+    font-weight: 14px;
+}
+.line button{
+    border: none;
+    outline: none;
+    font-size: 16px;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #ff5945;
+    padding: 16px 50px;
+    cursor: pointer;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+ul li {
+    position: relative;
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+ul li button {
+    border: none;
+    outline: none;
+    font-size: 15px;
+    background-color: #ff5945;
+    border-radius: 30px;
+    padding: 5px 20px;
+    color: white;
+}
+ul li::before{
+    content: "";
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url("../imgs/unchecked.png");
+    background-size: cover;
+    background-position: center;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 8px;
+}
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image: url("../imgs/checked.png") ;
+}
+.done {
+    border: none;
+    outline: none;
+    font-size: 18px;
+    border-radius: 40px;
+    color: #fff;
+    background-color: #ff5945;
+    padding: 5px 20px;
+    cursor: pointer;
+    position: relative;
+    z-index: 3;
+}
+.group {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+.done::before{
+    content: "your tasks will delete";
+    position: absolute;
+    width: 200px;
+    background-color: beige;
+    color: black;
+    border-radius: 20px;
+    top: -115%;
+    padding: 8px 10px;
+    left: 50%;
+    opacity: 0;
+    transition: all linear 300ms;
+    transform: translateX(-50%);
+}
+.done:hover::before{
+    opacity: 1;
+}
+.done:hover .group::before{
+    opacity: 1;
+}
